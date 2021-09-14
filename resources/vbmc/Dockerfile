@@ -2,7 +2,7 @@ ARG BASE_IMAGE=docker.io/centos:centos8
 
 FROM $BASE_IMAGE
 
-RUN apt-get update && apt-get install -y wget && rm -rf /var/lib/apt/lists/*
+RUN dnf update && dnf install -y wget && rm -rf /var/lib/apt/lists/*
 RUN dnf install -y python3 python3-requests python3-pip && \
      curl https://raw.githubusercontent.com/openstack/tripleo-repos/master/plugins/module_utils/tripleo_repos/main.py | python3 - -b master current-tripleo --no-stream && \
      dnf upgrade -y && \
