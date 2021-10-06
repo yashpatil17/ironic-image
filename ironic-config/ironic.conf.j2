@@ -169,7 +169,7 @@ pxe_config_template = $pybasedir/drivers/modules/ipxe_config.template
 tftp_master_path = /shared/tftpboot
 tftp_root = /shared/tftpboot
 uefi_pxe_config_template = $pybasedir/drivers/modules/ipxe_config.template
-pxe_append_params = nofb nomodeset vga=normal ipa-insecure=1 {% if env.IRONIC_RAMDISK_SSH_KEY %}sshkey="{{ env.IRONIC_RAMDISK_SSH_KEY|trim }}"{% endif %} {{ env.IRONIC_KERNEL_PARAMS|trim }} rootpwd="$1$T3iCS3m/$JGs4VgtZfU8M365n0BTJa1"
+pxe_append_params = nofb nomodeset vga=normal ipa-insecure=1 sshkey="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDa6l/LlI8pp0fvDTrLCCH7yVw0++VZjcEsx4qNHIiQVnKSGwJTjRtVqcDROlvxdOB1ZZipBkLJL2mbVdEKrQ4cIjIaOxbEdASFSk/5SLw3JHjqmOGGpp8j9MdV6aXQE41hryZviyhTkioTBn8uiwd/y0EJPbflOKP/AmrL+FYgyYzbX0Ut4YfXZsqTdYYQ65VXqX4dpXJRNPwG952i49LatBTJleDmEDKKdW2jxMS+RewHLX7XsIkGq9gODLO5uDjwLzGkD/FYzHcA2edO/zP1NZ2tiJcUE9PrbzzDi5FC/VERaErnOgeNoeguwkPiinqfKuXlU7BMGPXKjXFCShvN ubuntu@yash-controller-host" {{ env.IRONIC_KERNEL_PARAMS|trim }}
 # This makes networking boot templates generated even for nodes using local
 # boot (the default), ensuring that they boot correctly even if they start
 # netbooting for some reason (e.g. with the noop management interface).
